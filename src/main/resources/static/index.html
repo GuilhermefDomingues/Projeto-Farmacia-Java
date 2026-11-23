@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Painel local para testar a API do sistema de farmácia.">
+    <title>FarmaBem | Painel da farmácia</title>
+    <link rel="stylesheet" href="/farmacia.css">
+    <script src="/farmacia.js" defer></script>
+</head>
+<body>
+    <div class="topline"><div class="wrap">FARMABEM <span>AMBIENTE DE TESTE</span></div></div>
+    <header>
+        <div class="wrap header-content">
+            <a class="brand" href="/" aria-label="FarmaBem, início"><span class="brand-mark" aria-hidden="true">✚</span> Farma<span>Bem</span></a>
+            <div class="search">
+                <label class="sr-only" for="busca">Buscar na seção atual</label>
+                <input id="busca" type="search" placeholder="Buscar por medicamento ou fabricante">
+            </div>
+            <span class="header-label">Painel da farmácia</span>
+        </div>
+        <nav class="wrap nav" aria-label="Seções">
+            <button type="button" data-page="medicamentos" aria-current="page">Medicamentos</button>
+            <button type="button" data-page="clientes">Clientes</button>
+            <button type="button" data-page="vendas">Vendas</button>
+        </nav>
+    </header>
+    <main class="wrap">
+        <section class="hero" aria-labelledby="titulo">
+            <div>
+                <p class="eyebrow">GESTÃO DA FARMÁCIA</p>
+                <h1 id="titulo">Seu balcão digital</h1>
+                <p>Consulte o estoque, cadastre clientes e registre vendas em um só lugar.</p>
+            </div>
+            <div class="hero-mark" aria-hidden="true">✚</div>
+        </section>
+        <div id="aviso" class="notice" role="status" aria-live="polite" hidden></div>
+        <section class="section">
+            <div class="section-head">
+                <div>
+                    <h2 id="secao">Medicamentos</h2>
+                    <p id="contador"></p>
+                </div>
+                <button type="button" id="novo" class="primary">Novo medicamento</button>
+            </div>
+            <div id="lista" aria-busy="true"></div>
+        </section>
+    </main>
+    <dialog id="editor" aria-labelledby="editor-titulo">
+        <form id="formulario">
+            <div class="dialog-head">
+                <h2 id="editor-titulo"></h2>
+                <button type="button" id="fechar" class="secondary" aria-label="Fechar">✕</button>
+            </div>
+            <div id="campos"></div>
+            <p id="erro" class="error" role="alert" hidden></p>
+            <div class="dialog-actions">
+                <button type="button" id="cancelar" class="secondary">Cancelar</button>
+                <button type="submit" id="salvar" class="primary">Salvar</button>
+            </div>
+        </form>
+    </dialog>
+    <footer class="wrap">FarmaBem <span>•</span> Projeto de estudo em Spring Boot</footer>
+</body>
+</html>
